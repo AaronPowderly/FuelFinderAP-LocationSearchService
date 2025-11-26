@@ -38,4 +38,5 @@ public class FuelStationService {
     public int count() {
         return stations.size();
     }
+
 }
