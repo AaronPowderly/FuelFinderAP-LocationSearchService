@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class UserService
+public class  UserService
 {
     private final List<UserInformation> store = new ArrayList<>();
 
