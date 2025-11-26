@@ -20,3 +20,6 @@ Fuel Finder is a multi-service application designed to help users across Ireland
 -	Agile methodology with iterative sprints
 -	Jira for task tracking, sprint planning and issue management
 -	Weekly stand ups, sprint reviews, and retrospectives
+
+-	Jira - https://atu-team-r0igkm1a.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?selectedIssue=SCRUM-22
+-	
