@@ -12,4 +12,9 @@ public class LocationSearchService {
         return locations;
     }
 
+    public List<FuelStationInformation> search(String location){
+
+    }
+
+
 }
