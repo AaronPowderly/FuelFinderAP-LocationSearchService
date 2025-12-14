@@ -18,9 +18,6 @@ public class FuelStationController {
     }
 
 
-
-
-
     // Search stations by location name
     @GetMapping("/searchByLocation")
     public List<FuelStationInformation> searchByLocation(@RequestParam String location) {
