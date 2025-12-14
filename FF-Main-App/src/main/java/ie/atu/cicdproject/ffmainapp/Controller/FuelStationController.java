@@ -5,6 +5,7 @@ import ie.atu.cicdproject.ffmainapp.Service.FuelStationService;
 import ie.atu.cicdproject.ffmainapp.errorHandling.NoStationsFoundException;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
+import ie.atu.cicdproject.ffmainapp.Service.LocationSearchService;
 
 import java.util.List;
 
@@ -13,10 +14,14 @@ import java.util.List;
 public class FuelStationController {
 
     private final FuelStationService service;
+    private final LocationSearchService locationSearchService;
 
-    public FuelStationController(FuelStationService service) {
+    public FuelStationController(FuelStationService service, LocationSearchService locationSearchService) {
         this.service = service;
+        this.locationSearchService = locationSearchService;
     }
+
+
 
     // Add a new fuel station
     @PostMapping("/add")
@@ -34,6 +39,13 @@ public class FuelStationController {
     @GetMapping("/search")
     public List<FuelStationInformation> searchByStation(@RequestParam String station) {
         return service.searchByStation(station);
+    }
+
+    // Search stations by location name
+    @GetMapping("/searchByLocation")
+    public List<FuelStationInformation> searchByLocation(@RequestParam String location) {
+
+        return locationSearchService.searchByLocation(location);
     }
 
     // Count total stations
