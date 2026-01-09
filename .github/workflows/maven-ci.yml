@@ -22,7 +22,7 @@ jobs:
           java-version: '23'
 
       - name: Build with Maven
-        run: mvn -B package -DskipTests
+        run: mvn -B -f LocationSearchService/pom.xml package -DskipTests
 
       - name: Set image name (lowercase)
         run: echo "IMAGE=ghcr.io/${GITHUB_REPOSITORY,,}/app" >> $GITHUB_ENV
@@ -37,7 +37,8 @@ jobs:
       - name: Build & Push
         uses: docker/build-push-action@v6
         with:
-          context: .
+          context: ./LocationSearchService
+          file: ./LocationSearchService/Dockerfile
           push: true
           tags: |
             ${{ env.IMAGE }}:latest
