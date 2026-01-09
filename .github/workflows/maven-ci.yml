@@ -38,6 +38,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./LocationSearchService
+          file: ./LocationSearchService/Dockerfile
           push: true
           tags: |
             ${{ env.IMAGE }}:latest
